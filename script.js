@@ -17,7 +17,7 @@ async function weather() {
 
       if (!response.ok) {
         displayCity.innerHTML = "Please enter a valid city name";
-        return; // Exit the function early
+        return;
       }
   
       displayCity.innerHTML = data.name;
@@ -40,7 +40,7 @@ async function weather() {
       }else if(weatherCondition == 'haze'){
         image.src = "./images/haze.svg";
       }else{
-        image.src = "./images/default.svg"; // Default image for other conditions
+        image.src = "./images/cloud.svg";
       }
   
       console.log(data);
