@@ -47,8 +47,17 @@ async function weather() {
     } catch (error) {
       console.error('Failed to fetch weather data:', error);
     }
+    let tl = gsap.timeline();
+
+tl.from(".icon img", { duration: .5, scale: 0, opacity: 0, ease: "bounce" });
+tl.from(".city", { duration: .5, scale: 0, opacity: 0, ease: "back" });
+tl.from(".temp", { duration: .5, scale: 0, opacity: 0, ease: "back" });
+tl.from(".condition", { duration: .5, scale: 0, opacity: 0, ease: "back" });
+tl.from(".humidity", { duration: .5, x: -1000, opacity: 0,  });
+gsap.from(".wind", {delay:2, duration: .5, x: 1000, opacity: 0, });
   }
 
 button.addEventListener("click", weather);
 
-// weather();
+
+
